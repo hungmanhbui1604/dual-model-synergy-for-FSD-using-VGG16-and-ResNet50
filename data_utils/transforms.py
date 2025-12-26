@@ -1,0 +1,28 @@
+import torchvision.transforms as T
+
+dual_model_transform = {
+    'Train': T.Compose([
+        T.Resize((224, 224)),
+        T.RandomHorizontalFlip(p=0.5),
+        T.RandomVerticalFlip(p=0.5),
+        T.RandomAffine(
+            degrees=20,
+            translate=(0.1, 0.1), 
+            scale=(0.9, 1.1), 
+            shear=5, 
+            interpolation=T.InterpolationMode.NEAREST,
+        ),
+        T.ToTensor(),
+        T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ]),
+
+    'Test': T.Compose([
+        T.Resize((224, 224)),
+        T.ToTensor(),
+        T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+}
+
+def get_transforms(transform_type: str):
+    if transform_type == 'dual_model_transform':
+        return dual_model_transform
