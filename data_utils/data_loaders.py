@@ -128,11 +128,11 @@ def get_data_loaders(
     val_set = TransformedDataset(val_subset, transform['Test'])
     train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=num_workers, pin_memory=use_pin_memory)
     val_loader = DataLoader(val_set, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=use_pin_memory)
-    print(f"Number of train batches: {len(train_subset)}")
-    print(f"Number of val batches: {len(val_subset)}")
+    print(f"Number of train batches: {len(train_loader)}")
+    print(f"Number of val batches: {len(val_loader)}")
 
     # Test phase
     test_set = TransformedDataset(test_dataset, transform['Test'])
     test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=num_workers, pin_memory=use_pin_memory)
-    print(f"Number of test batches: {len(test_dataset)}")
+    print(f"Number of test batches: {len(test_loader)}")
     return train_loader, val_loader, test_loader, label_map

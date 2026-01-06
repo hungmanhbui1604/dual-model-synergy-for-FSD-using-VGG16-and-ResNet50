@@ -32,8 +32,8 @@ class DualModel(nn.Module):
 
 
 def get_model(
-        model_name: str,
-        out_dim: int
+    model_name: str,
+    out_dim: int
 ):
     if model_name.lower() == 'dual_model':
         model = DualModel(out_dim)
