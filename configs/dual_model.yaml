@@ -2,7 +2,7 @@
 TRAIN_SENSOR_PATH: './data/foreground_2015/CrossMatch'
 TEST_SENSOR_PATH: './data/foreground_2015/CrossMatch'
 TRANSFORM_TYPE: 'dual_model_transform'
-BATCH_SIZE: 16
+BATCH_SIZE: 32
 NUM_WORKERS: 4
 VAL_SPLIT: 0.1
 SEED: 42
@@ -17,7 +17,7 @@ OPTIMIZER_TYPE: 'adam'
 LEARNING_RATE: 0.001
 WEIGHT_DECAY: 0.0001
 SCHEDULER_TYPE: 'cosine_annealing'
-NUM_EPOCHS: 1
+NUM_EPOCHS: 50
 
 # Results Configuration
 RESULTS_SAVE_PATH: './results/dual_model.pth'
