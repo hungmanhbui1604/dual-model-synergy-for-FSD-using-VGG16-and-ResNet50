@@ -1,0 +1,19 @@
+# Dataset Configuration
+TEST_SENSOR_PATH: './data/foreground_2015/CrossMatch'
+TRANSFORM_TYPE: 'dual_model_transform'
+BATCH_SIZE: 32
+NUM_WORKERS: 4
+MULTICLASS: false
+
+# Model Configuration
+MODEL_NAME: 'dual_model'
+MODEL_LOAD_PATH: './checkpoints/dual_model.pth'
+
+# Evaluation Configuration
+# Set to a specific value (e.g., 0.5) to use fixed threshold
+# Set to null to automatically find optimal threshold based on ACE
+THRESHOLD: null
+
+# Results Configuration (optional)
+# Set to null to skip saving results
+RESULTS_SAVE_PATH: './results/eval_results.pth'

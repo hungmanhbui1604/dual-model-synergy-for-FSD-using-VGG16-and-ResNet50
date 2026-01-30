@@ -57,6 +57,6 @@ def find_optimal_threshold(labels, probabilities, based_on="ace"):
     elif based_on == "ace":
         optimal_idx = np.argmin(ace_values)
     else:
-        optimal_idx = np.argmin(accuracy_values)
+        optimal_idx = np.argmax(accuracy_values)
 
     return thresholds[optimal_idx], apcer_values[optimal_idx] * 100.0, bpcer_values[optimal_idx] * 100.0, ace_values[optimal_idx] * 100.0, accuracy_values[optimal_idx] * 100.0
